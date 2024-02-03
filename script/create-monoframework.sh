@@ -44,3 +44,8 @@ xcodebuild -create-xcframework \
     -library "$STAGE_DIR/xrossim/lib/libboost.a" \
     -headers "$FRAMEWORKS_DIR/Headers" \
     -output "$(pwd)/boost.xcframework"
+
+zip -r boost.xcframework.zip boost.xcframework
+
+echo 'Computing checksum for boost.xcframework.zip'
+swift package compute-checksum boost.xcframework.zip
