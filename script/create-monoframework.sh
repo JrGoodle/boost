@@ -8,9 +8,6 @@ BOOST_STAGE_DIR="$BOOST_DIR/stage"
 STAGE_DIR="$(pwd)/stage"
 FRAMEWORKS_DIR="$(pwd)/frameworks"
 
-rm -rf "$STAGE_DIR"
-mkdir -p "$STAGE_DIR"
-
 combine_static_libs() {
     local PLATFORM_NAME="$1"
 
