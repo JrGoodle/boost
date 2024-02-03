@@ -9,7 +9,7 @@ let checksum = "674de701533107501b8cb0d980328804d2cfb9d301e0da4bc9522d8752674030
 let package = Package(
     name: moduleName,
     platforms: [
-        .iOS(.v11),.macOS(.v11),.visionOS(.v1)
+        .iOS(.v12),.macOS(.v11),.visionOS(.v1)
     ],
     products: [
         .library(

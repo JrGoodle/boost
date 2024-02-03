@@ -2,8 +2,8 @@
 /boost.xcframework.zip
 /stage
 
-# Created by https://www.toptal.com/developers/gitignore/api/macos,synology,c++,swiftpackagemanager,swift,xcode
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,synology,c++,swiftpackagemanager,swift,xcode
+# Created by https://www.toptal.com/developers/gitignore/api/c++,macos,swift,xcode,synology
+# Edit at https://www.toptal.com/developers/gitignore?templates=c++,macos,swift,xcode,synology
 
 ### C++ ###
 # Prerequisites
@@ -117,7 +117,7 @@ playground.xcworkspace
 # *.xcodeproj
 # Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
 # hence it is not needed unless you have added a package configuration file to your project
-# .swiftpm
+.swiftpm
 
 .build/
 
@@ -156,12 +156,6 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-### SwiftPackageManager ###
-Packages
-xcuserdata
-*.xcodeproj
-
-
 ### Synology ###
 # Thumbnails
 @eaDir
@@ -181,4 +175,4 @@ xcuserdata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,synology,c++,swiftpackagemanager,swift,xcode
+# End of https://www.toptal.com/developers/gitignore/api/c++,macos,swift,xcode,synology
