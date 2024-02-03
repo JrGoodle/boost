@@ -1,0 +1,34 @@
+name: Test PR
+
+on:
+  pull_request:
+    branches:
+      - master
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build_frameworks:
+    name: Build frameworks
+    runs-on: macos
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          # fetch-depth: 2
+          submodules: recursive
+      - uses: maxim-lobanov/setup-xcode@60606e260d2fc5762a71e64e74b2174e8ea3c8bd
+        with:
+          xcode-version: '15.0'
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42
+        with:
+          bundler-cache: true
+      - name: Build boost
+        run: |
+          script/build-boost.sh
+      - name: Build monoframework
+        run: |
+          script/build-monoframework.sh
