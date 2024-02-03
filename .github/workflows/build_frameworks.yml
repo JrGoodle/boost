@@ -1,29 +1,29 @@
-name: Build frameworks
+# name: Build frameworks
 
-on:
-  workflow_dispatch:
-  release:
-    types: [created]
+# on:
+#   workflow_dispatch:
+#   release:
+#     types: [created]
 
-jobs:
-  build_frameworks:
-    name: Build frameworks
-    runs-on: macos
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-      - uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: 'latest-stable'
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-      - name: Build boost
-        run: |
-          script/build-boost.sh
-      - name: Save artifacts
-        run: |
-          gh release upload '${{github.ref_name}}' 'boost.xcframework'
+# jobs:
+#   build_frameworks:
+#     name: Build frameworks
+#     runs-on: macos
+#     steps:
+#       - name: Checkout repo
+#         uses: actions/checkout@v4
+#         with:
+#           submodules: recursive
+#       - uses: maxim-lobanov/setup-xcode@v1
+#         with:
+#           xcode-version: 'latest-stable'
+#       - name: Setup Ruby
+#         uses: ruby/setup-ruby@v1
+#         with:
+#           bundler-cache: true
+#       - name: Build boost
+#         run: |
+#           script/build-boost.sh
+#       - name: Save artifacts
+#         run: |
+#           gh release upload '${{github.ref_name}}' 'boost.xcframework'
