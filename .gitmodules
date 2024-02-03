@@ -1,0 +1,3 @@
+[submodule "boost-iosx"]
+	path = boost-iosx
+	url = https://github.com/apotocki/boost-iosx.git
