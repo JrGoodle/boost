@@ -3,10 +3,11 @@
 set -euo pipefail
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.."
 
-BOOST_DIR="$(pwd)/boost"
+BOOST_IOSX_DIR="$(pwd)/boost-iosx"
+BOOST_DIR="${BOOST_IOSX_DIR}/boost"
 BOOST_STAGE_DIR="$BOOST_DIR/stage"
+FRAMEWORKS_DIR="${BOOST_IOSX_DIR}/frameworks"
 STAGE_DIR="$(pwd)/stage"
-FRAMEWORKS_DIR="$(pwd)/frameworks"
 
 combine_static_libs() {
     local PLATFORM_NAME="$1"
