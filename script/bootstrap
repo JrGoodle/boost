@@ -34,8 +34,8 @@ case "$PLATFORM" in
         ;;
 esac
 
-h1 'git'
-h2 'Update submodules'
-run git submodule update --init --recursive
+# h1 'git'
+# h2 'Update submodules'
+# run git submodule update --init --recursive
 
 script/install_ruby.sh
